@@ -11,6 +11,7 @@ export class Loader {
         this.bindIndicesBuffer(indeces)
         this.storeDataInAttributeList(0, positions)
         this.unbindVAO()
+        if (!vaoId) throw new Error("VAO could not be created")
         return new RawModel(vaoId, indeces.length)
     }
 

@@ -1,9 +1,9 @@
 export class RawModel {
     
-    private _vaoId: WebGLVertexArrayObject|null;
-    private _vertexCount: number|null;
+    private _vaoId: WebGLVertexArrayObject;
+    private _vertexCount: number;
 
-    constructor(vaoId: WebGLVertexArrayObject|null, vertexCount: number|null) {
+    constructor(vaoId: WebGLVertexArrayObject, vertexCount: number) {
         this._vaoId = vaoId;
         this._vertexCount = vertexCount;
     }

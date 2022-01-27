@@ -56,8 +56,10 @@ export abstract class ShaderProgram {
         Engine.gl.uniformMatrix4fv(location, false, value.toFloat32Array())
     }
 
-    protected getUniformLocation(uniformName:string): WebGLUniformLocation|null  {
-        return Engine.gl.getUniformLocation(this._programId, uniformName)
+    protected getUniformLocation(uniformName:string): WebGLUniformLocation  {
+        const location: WebGLUniformLocation| null = Engine.gl.getUniformLocation(this._programId, uniformName)
+        if (!location) throw new Error("Could not find location of uniform name")
+        return location;
     }
 
     protected bindAttribute(attribute: number, variableName: string): void {
